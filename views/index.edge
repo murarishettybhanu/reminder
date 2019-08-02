@@ -1,0 +1,32 @@
+@layout('layouts.app')
+
+@section('content')
+<center>
+    <h1>Welcome to Reminder App
+    </h1>
+    @if(!auth)
+    <br><br><br><br>
+    <a href="/auth/login"><button class="btn btn-primary">Login</button></a>
+    <a href="/auth/register"><button class="btn btn-primary">Register</button></a>
+    @endif
+</center>
+@if(auth)
+<center>
+    <h3>Today is : {{date.toDateString()}}</h3><br>
+    <a href="/addreminder"><button class="btn btn-primary pl-5 pr-5" style="width: 30%">Set
+            reminder</button><br><br></a>
+    <a href="/modifypage"><button class="btn btn-primary pl-5 pr-5" style="width: 30%">Modify
+            reminder</button><br><br></a>
+    <a href="/disablepage"><button class="btn btn-primary pl-5 pr-5" style="width: 30%"> Disable reminder</button></a><br><br>
+    <a href="/deleteremainder"><button class="btn btn-primary pl-5 pr-5" style="width: 30%">Delete
+            Reminder</button></a><br><br>
+    <a href="/enablepage"><button class="btn btn-primary pl-5 pr-5" style="width: 30%">Enable reminder</button></a><br><br>
+    <a href="/viewremainders"><button class="btn btn-primary pl-5 pr-5" style="width: 30%">View your
+            Reminders</button><br><br></a>
+    <a href="/"><button class="btn btn-primary">Back</button></a>
+    <a href="/auth/logout"><button class="btn btn-danger">Logout</button></a>
+
+</center>
+@endif
+</div>
+@endsection

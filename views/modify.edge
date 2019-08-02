@@ -1,0 +1,37 @@
+@layout('layouts.app')
+
+@section('content')
+<center>
+    <form action="/update/{{posts._id}}" method="POST" encType="multipart/form-data">
+        <h1>Set Remainder</h1>
+        <p>Remainder name</p>
+        <input type="text" class="form-control" name="name" value="{{posts.name}}"><br>
+        <p>Select a date</p>
+        <input type="date" class="form-control" name="date" value="{{posts.date}}"><br>
+        <p>Subject:</p>
+        <select name="" id="" class="form-control" name="subject" value="{{posts.subject}}">
+            <option value="Meeting">Meeting</option>
+            <option value="Birthday">Birthday</option>
+            <option value="Event">Event</option>
+        </select><br>
+        <p>Add description</p>
+        <input type="text" class="form-control" name="description" value="{{posts.description}}"><br>
+        <p>Email</p>
+        <input type="email" class="form-control" name="email" value="{{posts.email}}"><br>
+        <p>Contact no</p>
+        <input type="text" class="form-control" name="contact" value="{{posts.contact}}"><br>
+        <p>SMS no</p>
+        <input type="text" class="form-control" name="sms" value="{{posts.sms}}"><br>
+        <p>Recur for next</p>
+        <select name="rec" id="" class="form-control">
+            <option value="7 Days">7 Days</option>
+            <option value="5 Days">5 Days</option>
+            <option value="3 Days">3 Days</option>
+            <option value="2 Days">2 Days</option>
+        </select> <br><br>
+        <a href="/"><button class="btn btn-primary">Confirm</button></a>
+    </form><br><br>
+    <a href="/modifypage"><button class="btn btn-primary">Back</button></a>
+    <a href="/auth/logout"><button class="btn btn-danger">Logout</button></a>
+</center>
+@endsection

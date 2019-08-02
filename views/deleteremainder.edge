@@ -1,0 +1,34 @@
+@layout('layouts.app')
+
+@section('content')
+<table class="table table-striped table-dark">
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Description</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>SMS no.</th>
+            <th>status</th>
+            <th>Recurrence frequency</th>
+            <th>Option</th>
+        </tr>
+        @each(post in posts)
+        <tr>
+            <td> {{post.name}} </td>
+            <td> {{post.subject}} </td>
+            <td> {{post.description}} </td>
+            <td> {{post.email}} </td>
+            <td> {{post.contact}} </td>
+            <td> {{post.sms}} </td>
+            <td> {{post.status}} </td>
+            <td> {{post.rec}} </td>
+            <td><a href="/delete/{{post._id}}"><button class="btn btn-danger">Delete Remainder</button></a>
+            </td>
+        </tr>
+        @endeach
+    </table>
+
+<a href="/"><button class="btn btn-primary">Back</button></a>
+<a href="/auth/logout"><button class="btn btn-danger">Logout</button></a>
+@endsection
